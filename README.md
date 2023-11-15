@@ -115,12 +115,56 @@ To exit the "log view", press `q`
 Running the `git status` command one more time:
 
 ```bash
-charlieroth/create-git-repo [main●] » git status
+charlieroth/create-git-repo [main] » git status
 On branch main
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   README.md
-
-no changes added to commit (use "git add" and/or "git commit -a")
+nothing to commit, working tree clean
 ```
+
+We can see that we have a "clean working tree". This means that you have no pending changes that can be committed
+
+## 4. Create Repository on Github
+
+In order to store the code on Github you will need to go to https://github.com/
+
+In the top right corner you will click on the `+` button
+
+![Create Repository Button Screenshot](github-create-repository-button.png)
+
+## 5. Fill In Github Repository Details
+
+Next you will need to give your Github repository a name and an optional description.
+
+For now make the repository "Public" so it can be easily accessible
+
+![Repository Details](github-repository-details.png)
+
+Click the `Create repository` button.
+
+## 6. Connect and Push Local Repository
+
+The repository on your machine is what we will call your "local repository". The repository you just created on Github is your "remote repository".
+
+To push your local repository to your remote repository run the commands in the `…or push an existing repository from the command line` section __one at a time__
+
+![Push Existing Repository](github-push-existing-repository.png)
+
+Running the commands, you should see similar output to the following:
+
+```bash
+charlieroth/create-git-repo [main●] » git remote add origin git@github.com:charlieroth/create-git-repo.git
+charlieroth/create-git-repo [main●] » git branch -M main
+charlieroth/create-git-repo [main●] » git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.45 KiB | 1.45 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:charlieroth/create-git-repo.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
+After this you can return to the browser and refresh the page and you should see your Github remote repository set up
+
+![Created Repository](github-create-repository.png)
